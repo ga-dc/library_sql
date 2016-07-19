@@ -28,15 +28,19 @@ SELECT title FROM books;
 SELECT publication_date FROM books WHERE title = 'A Dance With Dragons';
 
 -- Get all books which have `the` somewhere in their title (hint, look up LIKE/ILIKE)
-
+SELECT * FROM books WHERE title LIKE '%the%';
 
 -- Add yourself as an author
 INSERT INTO authors (name) VALUES ('Tyler');
 
 -- Add two books that you'd like to write (you can hard-code your id as the author id)
-
+INSERT INTO books (title, publication_date, author_id) VALUES ('MyBook_1', 2016, 9);
+INSERT INTO books (title, publication_date, author_id) VALUES ('MyBook_2', 2016, 9);
 -- Update one of your books to have a new title
+UPDATE books SET title = 'brand new title' WHERE author_id = 9;
 
 -- Delete your books
+DELETE * FROM books WHERE author_id = 9
 
 -- Delete your author entry
+DELETE * FROM authors WHERE author = 'Tyler'
